@@ -1,0 +1,295 @@
+
+% ==============================================================================
+% PhD Curriculum Vitae — High-Density Template
+% ==============================================================================
+\documentclass[10pt, letterpaper]{article}
+
+%------------------------------------------------------------------------------
+% Packages
+%------------------------------------------------------------------------------
+\usepackage[margin=0.75in, top=0.65in, bottom=0.65in]{geometry}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{ifthen}
+\usepackage{amssymb}
+
+%------------------------------------------------------------------------------
+% Colors
+%------------------------------------------------------------------------------
+\definecolor{accentblue}{RGB}{20, 75, 140}
+\definecolor{darkgray}{RGB}{40, 40, 40}
+\definecolor{lightgray}{RGB}{120, 120, 120}
+\definecolor{rulecolor}{RGB}{180, 200, 225}
+\definecolor{RULECOLOR}{RGB}{180, 200, 225}
+
+%------------------------------------------------------------------------------
+% Hyperref
+%------------------------------------------------------------------------------
+\hypersetup{colorlinks=true, urlcolor=accentblue, linkcolor=accentblue, pdfborder={0 0 0}}
+
+%------------------------------------------------------------------------------
+% Spacing — tighter everywhere
+%------------------------------------------------------------------------------
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+%------------------------------------------------------------------------------
+% Section formatting
+%------------------------------------------------------------------------------
+\titleformat{\section}
+  {\normalsize\bfseries\color{accentblue}\uppercase}
+  {}{0em}{}
+  [\vspace{-5pt}\textcolor{rulecolor}{\rule{\linewidth}{0.5pt}}\vspace{1pt}]
+\titlespacing{\section}{0pt}{8pt}{3pt}
+
+\titleformat{\subsection}
+  {\small\bfseries\color{darkgray}}
+  {}{0em}{}[]
+\titlespacing{\subsection}{0pt}{4pt}{1pt}
+
+%------------------------------------------------------------------------------
+% List settings — compact
+%------------------------------------------------------------------------------
+\setlist{noitemsep, topsep=1pt, parsep=0pt, partopsep=0pt}
+\setlist[itemize]{leftmargin=1.2em, label=\textcolor{accentblue}{\textbullet}}
+\setlist[enumerate]{leftmargin=1.6em}
+
+%------------------------------------------------------------------------------
+% Custom commands
+%------------------------------------------------------------------------------
+\newcommand{\entry}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} \textcolor{lightgray}{$\cdot$} \textit{#2} &
+    {\small\textcolor{lightgray}{#3}}
+  \end{tabularx}\vspace{1pt}%
+}
+
+\newcommand{\entrysub}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} \textcolor{lightgray}{$\cdot$} \textit{#2} &
+    {\small\textcolor{lightgray}{#3}}
+  \end{tabularx}%
+  \ifthenelse{\equal{#4}{}}{}{\\\hspace{1.2em}{\small\textcolor{darkgray}{#4}}}%
+  \vspace{1pt}%
+}
+
+\newcommand{\honorrow}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    #1 \textcolor{lightgray}{$\cdot$} \textit{\small #2} & {\small\textcolor{lightgray}{#3}}
+  \end{tabularx}\vspace{1pt}%
+}
+
+%==============================================================================
+\begin{document}
+\pagestyle{empty}
+
+%==============================================================================
+% HEADER
+%==============================================================================
+\begin{center}
+  {\Large\bfseries\color{darkgray} Your Full Name}\\[3pt]
+  {\small\color{lightgray}
+    Ph.D. Candidate $\cdot$ Department of Computer Science $\cdot$ University of Somewhere\\[2pt]
+    \faEnvelope[regular]\;\href{mailto:you@university.edu}{you@university.edu}\quad
+    \faGlobe\;\href{https://yoursite.com}{yoursite.com}\quad
+    \faGithub\;\href{https://github.com/you}{github.com/you}\quad
+    \faLinkedin\;\href{https://linkedin.com/in/you}{linkedin.com/in/you}\quad
+    \faMapMarker*\;City, Country
+  }
+\end{center}
+\vspace{2pt}
+
+%==============================================================================
+% RESEARCH INTERESTS
+%==============================================================================
+\section{Research Interests}
+
+\textbf{Machine learning} and \textbf{natural language processing}, with emphasis on
+\textbf{efficient fine-tuning} of large language models, \textbf{model interpretability},
+\textbf{low-resource and cross-lingual transfer}, and applications of LLMs to
+\textbf{biomedical and scientific text mining}.
+Broadly interested in scaling laws, alignment, and evaluation methodology.
+
+%==============================================================================
+% EDUCATION
+%==============================================================================
+\section{Education}
+
+\entrysub{Ph.D., Computer Science}{University of Somewhere}{Sep 2020 -- Present (expected May 2025)}%
+  {Advisor: Prof.\ Jane Doe \quad Dissertation: \textit{Efficient and Interpretable LLMs for Scientific Text} \quad GPA: 4.0/4.0}
+
+\entrysub{M.S., Computer Science}{University of Somewhere}{Sep 2018 -- May 2020}%
+  {Thesis: \textit{Graph Neural Networks for Knowledge Base Completion} \quad GPA: 3.95/4.0}
+
+\entrysub{B.Eng., Software Engineering (Hons.)}{Tsinghua University, Beijing}{Sep 2014 -- Jun 2018}%
+  {Graduated with Distinction, ranked 3rd/120 \quad Dean's List all semesters \quad National Scholarship 2016, 2017}
+
+%==============================================================================
+% SELECTED PUBLICATIONS
+%==============================================================================
+\section{Selected Publications}
+{\small\textcolor{lightgray}{$^\dagger$equal contribution.\quad
+\faExternalLink*\;\href{https://scholar.google.com/}{Full list on Google Scholar.}}}
+\vspace{2pt}
+
+\begin{enumerate}[label={\small[\arabic*]}, itemsep=3pt, topsep=0pt]
+
+  \item \textbf{Your Name}, Author B, Author C, Jane Doe.
+    ``Efficient Fine-Tuning of Large Language Models via Sparse Adapters.''
+    \textit{Proc.\ ACL} \textbf{2024} (long paper, oral presentation), Bangkok.
+    [\href{https://arxiv.org/}{arXiv}][\href{https://github.com/}{Code}][\href{https://}{Slides}]
+
+  \item Author A$^\dagger$, \textbf{Your Name}$^\dagger$, Jane Doe.
+    ``Low-Resource NER with Contrastive Curriculum Learning.''
+    \textit{Proc.\ EMNLP} \textbf{2023} (long), Singapore.
+    [\href{https://arxiv.org/}{arXiv}][\href{https://github.com/}{Code}]
+
+  \item \textbf{Your Name}, Jane Doe.
+    ``Interpretable Sparse Attention for Scientific Document Understanding.''
+    \textit{Transactions of ACL} (\textbf{TACL}), vol.\ 11, pp.\ 345--360, \textbf{2023}.
+    [\href{https://arxiv.org/}{arXiv}][\href{https://github.com/}{Demo}]
+
+  \item \textbf{Your Name}, Author B, Jane Doe.
+    ``Knowledge-Augmented LLMs for Biomedical QA.''
+    \textit{BioNLP Workshop @ NAACL} \textbf{2022}.\;
+    \textcolor{accentblue}{\textbf{Best Paper Award.}}
+    [\href{https://arxiv.org/}{arXiv}]
+
+  \item Author C, \textbf{Your Name}, Author D.
+    ``Retrieval-Augmented Scientific Claim Verification.''
+    \textit{Findings of EMNLP} \textbf{2022}.
+    [\href{https://arxiv.org/}{arXiv}][\href{https://github.com/}{Code}]
+
+\end{enumerate}
+
+\noindent{\small\textit{\textcolor{lightgray}{Under Review / Preprints:}}}
+\begin{enumerate}[label={\small[\arabic*]}, itemsep=2pt, topsep=1pt, start=6]
+  \item \textbf{Your Name}, Author E, Jane Doe.
+    ``Scaling Laws for Domain-Adaptive Pre-Training.''
+    Submitted to \textit{NeurIPS 2024}.
+    [\href{https://arxiv.org/}{arXiv}]
+
+  \item Author F, \textbf{Your Name}.
+    ``Benchmark Contamination Detection via Membership Inference.''
+    Preprint, \textbf{2024}. [\href{https://arxiv.org/}{arXiv}]
+\end{enumerate}
+
+%==============================================================================
+% RESEARCH EXPERIENCE
+%==============================================================================
+\section{Research Experience}
+
+\entry{Graduate Research Assistant}{NLP Lab, University of Somewhere}{Aug 2020 -- Present}
+\begin{itemize}
+  \item Developed sparse-adapter fine-tuning framework; reduced training FLOPs by 60\% with $<$0.3\% accuracy drop across 8 GLUE tasks; open-sourced with \textbf{5.2k GitHub stars}, adopted by 25+ research labs worldwide.
+  \item Designed contrastive curriculum learning strategy for low-resource NER; achieved new SOTA on 6 of 7 benchmarks (CoNLL-2003, WNUT-17, etc.) under 100-example setting.
+  \item Mentored 4 undergraduates and 2 M.S.\ students; 2 became co-authors on published conference papers.
+  \item Authored successful \$45k NSF ACCESS compute proposal; managed cluster allocations for lab-wide experiments.
+\end{itemize}
+\vspace{3pt}
+
+\entry{Visiting Researcher (host: Prof.\ C.\ Manning)}{Stanford NLP Group}{Jun -- Aug 2023}
+\begin{itemize}
+  \item Investigated zero-shot cross-lingual transfer across 30+ languages via language-neutral representation learning.
+  \item Results integrated into ACL 2024 submission; contributed 3k-line patch to Stanford CoreNLP.
+\end{itemize}
+\vspace{3pt}
+
+\entry{Research Intern (host: Dr.\ X)}{Allen Institute for AI (AI2), Seattle}{May -- Aug 2022}
+\begin{itemize}
+  \item Built scientific claim verification pipeline on S2ORC (136M papers); F1 +4.2 pts over prior SOTA (Wadden et al.).
+  \item Deployed as live demo serving 500+ daily active users; published in Findings of EMNLP 2022.
+\end{itemize}
+
+%==============================================================================
+% INDUSTRIAL EXPERIENCE
+%==============================================================================
+\section{Industrial Experience}
+
+\entry{Research Intern --- Gemini Pre-training Team}{Google DeepMind, London, UK}{Jun -- Sep 2022}
+\begin{itemize}
+  \item Contributed to Gemini pre-training data pipeline running on TPU v4 pods (10k+ chips, multi-datacenter).
+  \item Designed domain-weighted data-mixing curriculum: +2.3\% MMLU, +1.8\% BIG-Bench Hard vs.\ flat-mixing baseline.
+  \item Co-authored internal technical report; methodology adopted in subsequent production training runs.
+\end{itemize}
+\vspace{3pt}
+
+\entry{Machine Learning Intern --- FAIR}{Meta AI Research, Menlo Park, CA}{Jun -- Aug 2021}
+\begin{itemize}
+  \item Prototyped RAG system for internal enterprise knowledge search (200k+ docs, 10k+ daily queries).
+  \item Reduced P95 retrieval latency by 35\% via HNSW indexing + query-side embedding cache; shipped to 1k users.
+  \item Filed U.S.\ patent application on learned sparse retrieval (pending, App.\ \#18/123,456).
+\end{itemize}
+\vspace{3pt}
+
+\entry{Software Engineering Intern --- Search Infrastructure}{Baidu, Beijing}{Jun -- Aug 2017}
+\begin{itemize}
+  \item Optimized inverted index compression scheme; 12\% index size reduction on a 20B-document production corpus.
+\end{itemize}
+
+%==============================================================================
+% TEACHING & SERVICE
+%==============================================================================
+\section{Teaching \& Service}
+
+\subsection*{Teaching}
+\begin{itemize}
+  \item \textbf{Head TA}, CS 6741 Natural Language Processing (Grad, $\sim$120 students), Univ.\ of Somewhere\hfill\textcolor{lightgray}{\small Fall 2022, 2023}
+  \item \textbf{Teaching Assistant}, CS 4120 Introduction to Machine Learning\hfill\textcolor{lightgray}{\small Spring 2021}
+  \item \textbf{Guest Lecturer}: ``Transformers \& Self-Attention'' (CS 4120, Mar 2023); ``Parameter-Efficient Fine-Tuning'' (CS 6741, Oct 2023)
+  \item \textbf{Lecturer}, 3-day bootcamp ``Practical LLMs for Scientists'', AI for Science Summer School, Jul 2023 (60 attendees)
+\end{itemize}
+
+\subsection*{Academic Service}
+\begin{itemize}
+  \item \textbf{Reviewer}: ACL (2022--2024), EMNLP (2021--2023), NeurIPS (2022--2024), ICLR (2023--2024), NAACL 2024, TACL, JMLR; ACL ARR rolling (2022--present) \quad \textcolor{accentblue}{\textbf{Outstanding Reviewer, ACL 2023}}
+  \item \textbf{Area Chair / Meta-Reviewer}: ACL Rolling Review, Jan--Mar 2024
+  \item \textbf{Session Chair}: NLP Applications Track, ACL 2023; Efficient NLP Track, EMNLP 2023
+  \item \textbf{Organizer}: NLP Reading Group, Univ.\ of Somewhere (weekly, 30+ participants), 2021--present
+  \item \textbf{PhD Admissions Committee}, Dept.\ of CS, Univ.\ of Somewhere, 2022--2023
+  \item \textbf{Student Volunteer}: ACL 2021, NeurIPS 2020
+\end{itemize}
+
+%==============================================================================
+% HONORS & AWARDS
+%==============================================================================
+\section{Honors \& Awards}
+
+\honorrow{Outstanding Paper Award}{ACL 2024}{2024}
+\honorrow{Outstanding Reviewer Award}{ACL 2023}{2023}
+\honorrow{NSF Graduate Research Fellowship (GRFP), 3-year full support}{National Science Foundation}{2020--2023}
+\honorrow{University Graduate Fellowship (full tuition + stipend)}{University of Somewhere}{2020}
+\honorrow{Google PhD Fellowship --- Finalist, NLP track}{Google}{2021}
+\honorrow{Best Paper Award}{Workshop on Biomedical NLP @ NAACL 2022}{2022}
+\honorrow{NSF ACCESS Compute Allocation Grant (\$45k GPU hours)}{National Science Foundation}{2022}
+\honorrow{Undergraduate Excellence Award --- Dept.\ Gold Medal, Top 3\%}{Tsinghua University}{2018}
+\honorrow{National Scholarship (top 1\% nationwide, awarded twice)}{Ministry of Education, China}{2016, 2017}
+
+%==============================================================================
+% MISCELLANEOUS
+%==============================================================================
+\section{Miscellaneous}
+
+\begin{tabularx}{\linewidth}{@{}>{\bfseries\small}p{2.5cm}X@{}}
+  Programming   & Python, C++, CUDA, Bash, SQL, Julia \\[1.5pt]
+  ML Frameworks & PyTorch, JAX/Flax, Hugging Face (Transformers, PEFT, Datasets, Accelerate), DeepSpeed, vLLM, TRL \\[1.5pt]
+  Infrastructure & Git, Docker/Singularity, Slurm, AWS (EC2/S3), GCP, Weights \& Biases, Ray, Kubernetes \\[1.5pt]
+  Languages     & English (fluent), Mandarin Chinese (native), French (intermediate, DELF B2) \\[1.5pt]
+  Open Source   & Maintainer: \href{https://github.com/}{SparseAdapt} (5.2k $\bigstar$, 300+ forks); contributor: HF Transformers, AllenNLP \\[1.5pt]
+  Interests     & Marathon running (PB 3:12:04), landscape photography, science communication (blog: 2k subscribers) \\[1.5pt]
+  References    & Prof.\ Jane Doe (advisor, advisor@univ.edu) $\cdot$ Prof.\ C.\ Manning (Stanford) $\cdot$ Dr.\ X (Google DeepMind) \\
+\end{tabularx}
+
+\vspace{8pt}
+\noindent\textcolor{lightgray}{\footnotesize\textit{Last updated: \today}}
+
+\end{document}
+

@@ -1,0 +1,227 @@
+% ==============================================================================
+% PhD Curriculum Vitae — High-Density Template
+% ==============================================================================
+\documentclass[10pt, letterpaper]{article}
+
+%------------------------------------------------------------------------------
+% Packages
+%------------------------------------------------------------------------------
+\usepackage[margin=0.75in, top=0.65in, bottom=0.65in]{geometry}
+\usepackage{ctex} % 中文支持（关键）
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK SC}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{ifthen}
+\definecolor{RULECOLOR}{RGB}{180,180,180}
+
+%------------------------------------------------------------------------------
+% Colors
+%------------------------------------------------------------------------------
+\definecolor{accentblue}{RGB}{20, 75, 140}
+\definecolor{darkgray}{RGB}{40, 40, 40}
+\definecolor{lightgray}{RGB}{120, 120, 120}
+\definecolor{rulecolor}{RGB}{180, 200, 225}
+
+%------------------------------------------------------------------------------
+% Hyperref
+%------------------------------------------------------------------------------
+\hypersetup{colorlinks=true, urlcolor=accentblue, linkcolor=accentblue}
+
+%------------------------------------------------------------------------------
+% Spacing
+%------------------------------------------------------------------------------
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+%------------------------------------------------------------------------------
+% Section formatting
+%------------------------------------------------------------------------------
+\titleformat{\section}
+  {\normalsize\bfseries\color{accentblue}\uppercase}
+  {}{0em}{}
+  [\vspace{-5pt}\textcolor{rulecolor}{\rule{\linewidth}{0.5pt}}\vspace{1pt}]
+\titlespacing{\section}{0pt}{8pt}{3pt}
+
+\titleformat{\subsection}
+  {\small\bfseries\color{darkgray}}
+  {}{0em}{}
+\titlespacing{\subsection}{0pt}{4pt}{1pt}
+
+%------------------------------------------------------------------------------
+% List settings
+%------------------------------------------------------------------------------
+\setlist{noitemsep, topsep=1pt, parsep=0pt}
+\setlist[itemize]{leftmargin=1.2em, label=\textcolor{accentblue}{\textbullet}}
+
+%------------------------------------------------------------------------------
+% Custom commands
+%------------------------------------------------------------------------------
+\newcommand{\entry}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} \textcolor{lightgray}{$\cdot$} \textit{#2} &
+    {\small\textcolor{lightgray}{#3}}
+  \end{tabularx}\vspace{1pt}%
+}
+
+\newcommand{\entrysub}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} \textcolor{lightgray}{$\cdot$} \textit{#2} &
+    {\small\textcolor{lightgray}{#3}}
+  \end{tabularx}%
+  \ifthenelse{\equal{#4}{}}{}{\\\hspace{1.2em}{\small\textcolor{darkgray}{#4}}}%
+  \vspace{1pt}%
+}
+
+\newcommand{\honorrow}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    #1 \textcolor{lightgray}{$\cdot$} \textit{\small #2} & {\small\textcolor{lightgray}{#3}}
+  \end{tabularx}\vspace{1pt}%
+}
+
+%==============================================================================
+\begin{document}
+\pagestyle{empty}
+
+%==============================================================================
+% HEADER
+%==============================================================================
+\begin{center}
+  {\Large\bfseries\color{darkgray} 文曲星}\\[3pt]
+  {\small\color{lightgray}
+    博士生 $\cdot$ 计算机科学与技术学院 $\cdot$ 清华大学\\[2pt]
+    \faEnvelope[regular]\;\href{mailto:name@qinghua.edu.cn}{mail@tsinghua.edu.cn}\quad
+    \faGraduationCap\;\href{https://scholar.google.com}{Google Scholar}\quad
+    \faMobile*\;+86 123-4567-8910\quad
+    \faMapMarker*\;中国北京
+  }
+\end{center}
+
+%==============================================================================
+\section{研究兴趣}
+机器人感知与自主导航方向，融合深度学习与多传感器融合技术，围绕视觉SLAM、三维场景理解与语义地图构建开展研究，重点探索视觉--惯性里程计、动态环境下的鲁棒定位以及多机器人协同建图框架，推动高效、可泛化的智能移动机器人系统发展。
+
+%==============================================================================
+\section{教育经历}
+
+\entrysub{清华大学（Tsinghua University）}{博士在读-计算机科学与技术专业}{2023年9月--2027年6月（预计）}%
+{导师：博士导师\quad 中国北京}
+
+\entrysub{哈尔滨工业大学（Harbin Institute of Technology）}{工学硕士-控制科学与工程专业}{2020年9月--2023年6月}%
+{导师：硕士导师\quad 中国哈尔滨}
+
+\entrysub{苏黎世联邦理工学院（ETH Zurich）}{访问学者-计算机视觉专业}{2022年3月--2022年12月}%
+{导师：Prof.\ Marc Pollefeys\quad 瑞士苏黎世}
+
+\entrysub{武汉大学（Wuhan University）}{工学学士-自动化专业}{2016年9月--2020年6月}%
+{中国武汉}
+
+%==============================================================================
+\section{发表论文}
+{\small\textcolor{lightgray}{*Corresponding author}}
+{\faExternalLink*\;\href{https://scholar.google.com}{Full list on Google Scholar.}}
+\vspace{2pt}
+
+\begin{enumerate}[label={\small[\arabic*]}, itemsep=3pt, topsep=0pt]
+
+\item \textbf{Wen, Q.}, Chen H, Liu Y, et al.
+    ``Tile: Paper Title.''
+    \textit{Proc.\ RSS}, 2026.
+    [\href{https://arxiv.org/}{arXiv}][\href{https://github.com/}{Code}]
+
+\item \textbf{Wen, Q.}, Chen H, Liu Y, et al.
+    ``Tile: Paper Title.''[C]
+    \textit{Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). 2099: 2210-2218.}
+    [\href{https://github.com/}{Code}]
+    [\href{https://}{Demo}]
+
+\item Zhang W, \textbf{Wen, Q.}, Liu H, et al.
+    ``Tile: Paper Title.''[J]
+    \textit{IEEE Transactions on Intelligent Transportation Systems, 2099, 26(3): 1520-1538.}
+
+\item Chen, H, \textbf{Wen, Q.}, Wu Y, et al.
+    ``Tile: Paper Title.''[C]
+   \textit{Proc.\ IEEE ICRA 2025}.
+
+\end{enumerate}
+%==============================================================================
+\section{研究经历}
+
+
+\entry{Title: 论文标题}{清华大学智能机器人实验室}{2024年9月 -- 2026年3月}
+\begin{itemize}
+\item 设计基于神经隐式表征的多机器人协同稠密建图框架
+\item 构建分布式地图融合架构，支持5台机器人实时协同
+\item 在3个大规模室内外数据集上建图精度超越SOTA方法12.5\%
+\end{itemize}
+
+\entry{Title: 论文标题}{清华大学智能机器人实验室}{2023年9月 -- 2024年8月}
+\begin{itemize}
+\item 构建动态物体感知的视觉SLAM系统
+\item 融合语义分割与光流估计进行动态区域剔除
+\item 在TUM RGB-D动态序列上定位精度提升38\%
+\end{itemize}
+
+\entry{Title: 论文标题}{ETH Zurich}{2022年3月 -- 2022年10月}
+\begin{itemize}
+\item 开发基于深度学习的单目视觉惯性里程计系统
+\item 构建包含50K帧的室内外导航数据集
+\end{itemize}
+
+\entry{Title: 论文标题}{哈尔滨工业大学}{2021年9月 -- 2021年12月}
+\begin{itemize}
+\item 华为杯第18届全国研究生数学建模竞赛
+\item 基于ICP与NDT算法的点云配准优化
+\item 实现0.12m平均配准误差
+\end{itemize}
+%==============================================================================
+\section{业界经历}
+
+\entry{算法实习生（Research Intern）}{大疆创新（DJI）感知算法部，中国深圳}{2099年3月--2099年8月}
+
+\begin{itemize}
+\item 参与无人机视觉SLAM模块优化，定位精度提升15\%
+\item 开发基于点云的障碍物检测算法，部署于嵌入式平台
+\end{itemize}
+
+\entry{研究助理（Research Assistant）}{苏黎世联邦理工学院（ETH Zurich）计算机视觉实验室，瑞士}{2099年8月--2099年12月}
+
+\entry{机器人开发实习生（Robotics Intern）}{海康威视机器人事业部，中国杭州}{2099年6月--2099年9月}
+
+\entry{软件开发实习生（Software Engineering Intern）}{华为技术有限公司，中国深圳}{2099年7月--2099年10月}
+%==============================================================================
+\section{荣誉奖项}
+\honorrow{电气与电子工程师协会会员（IEEE Membership）}{IEEE}{2024--2027}
+\honorrow{中国自动化学会会员（CAA Membership）}{CAA}{2021--2025}
+\honorrow{省级一等奖}{湖北省数学建模竞赛}{2018}
+\honorrow{优秀一等奖学金}{武汉大学}{2017--2020}
+
+%==============================================================================
+\section{其他}
+
+\begin{tabularx}{\linewidth}{@{}>{\bfseries\small}p{2.5cm}X@{}}
+编程语言 & Python, C++, CUDA, Bash, SQL, ROS \\
+
+技术框架 & PyTorch, TensorRT, Open3D, OpenCV, PCL, ORB-SLAM3, GTSAM \\[1.5pt]
+
+基础设施 & Git, Docker/Singularity, Slurm, AWS（EC2/S3）, Weights \& Biases \\[1.5pt]
+
+语言能力 & 中文（母语）, 英语（流利，IELTS 7.5）, 德语（初级，A2） \\[1.5pt]
+
+兴趣爱好 & 无人机航拍, 骑行, 乒乓球, 科技博客写作 \\
+
+推荐人 & 院士教授（导师, yuanshi@tsinghua.edu.cn） \\
+\end{tabularx}
+
+\vspace{8pt}
+\noindent\textcolor{lightgray}{\footnotesize\textit{Last updated: \today}}
+
+\end{document}
